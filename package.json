@@ -6,7 +6,6 @@
   "scripts": {
     "start-dev": "webpack-dev-server --config webpack.dev.js",
     "build": "webpack --config webpack.prod.js",
-    "build-serve": "npm run build && npx http-server ./dist",
     "test": "karma start"
   },
   "keywords": [],
@@ -25,7 +24,6 @@
     "eslint-plugin-import": "^2.27.5",
     "eslint-plugin-prettier": "^4.2.1",
     "html-webpack-plugin": "^5.5.0",
-    "http-server": "^14.1.1",
     "jasmine-ajax": "^4.0.0",
     "jasmine-core": "^4.2.0",
     "karma": "^5.2.3",
