@@ -38,7 +38,6 @@ const Detail = {
       form: document.getElementById("form-review"),
       id: restaurant.id,
       container: document.getElementById("alertMessageContainer"),
-      customerReviewsContainer: document.getElementById("restaurantReview"),
     });
   },
 };
