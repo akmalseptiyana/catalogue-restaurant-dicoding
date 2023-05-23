@@ -1,7 +1,13 @@
 import RestaurantSource from "../data/restaurant-source";
+import {
+  createAlertMessage,
+  createCustomerReviews,
+} from "../views/templates/template-creator";
 
 const AddReviewInitator = {
-  init({ form, id }) {
+  init({ form, id, container }) {
+    this._alertMessageContainer = container;
+
     form.addEventListener("submit", (event) => {
       this._submitHandler(event, form, id);
     });
@@ -10,13 +16,19 @@ const AddReviewInitator = {
   async _submitHandler(event, form, id) {
     event.preventDefault();
 
-    const data = this._fieldHandler(form);
-    const response = await RestaurantSource.addRestaurantReview({
-      id,
-      ...data,
-    });
+    try {
+      const data = this._fieldHandler(form);
+      const response = await RestaurantSource.addRestaurantReview({
+        id,
+        ...data,
+      });
 
-    return response;
+      this._renderReview(response);
+    } catch (error) {
+      this._renderErrorMessage(error);
+    }
+
+    return true;
   },
 
   _fieldHandler(form) {
@@ -27,6 +39,24 @@ const AddReviewInitator = {
     }
 
     return data;
+  },
+
+  _renderReview(data) {
+    const customerReviewsContainer =
+      document.getElementById("restaurantReview");
+    customerReviewsContainer.innerHTML = createCustomerReviews(
+      data.customerReviews
+    );
+  },
+
+  _renderErrorMessage(response) {
+    const message = response && "failed add review";
+    this._alertMessageContainer.innerHTML = createAlertMessage(message);
+    setTimeout(() => {
+      this._alertMessageContainer.removeChild(
+        document.querySelector(".alert-message")
+      );
+    }, 2000);
   },
 };
 

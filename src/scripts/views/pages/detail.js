@@ -1,22 +1,25 @@
+import "../components/restaurant-detail";
 import RestaurantSource from "../../data/restaurant-source";
 import UrlParser from "../../routes/url-parser";
 import AddReviewInitator from "../../utils/add-review-initiator";
 import FavoriteButtonInitiator from "../../utils/favorite-button-initiator";
-import { createRestaurantDetailTemplate } from "../templates/template-creator";
 
 const Detail = {
   async render() {
     return `
-      <section id="restaurantDetail" class="restaurant-detail"></section>
+      <section id="restaurantDetail" class="restaurant-detail">
+        <restaurant-detail></restaurant-detail>
+      </section>
       <div id="favoriteButtonContainer"></div>
+      <div id="alertMessageContainer"></div>
     `;
   },
 
   async afterRender() {
     const url = UrlParser.parseActiveUrlWithoutCombiner();
     const restaurant = await RestaurantSource.getRestaurantDetail(url.id);
-    const restaurantContainer = document.getElementById("restaurantDetail");
-    restaurantContainer.innerHTML = createRestaurantDetailTemplate(restaurant);
+    const restaurantContainer = document.querySelector("restaurant-detail");
+    restaurantContainer.restaurantDetail = restaurant;
 
     FavoriteButtonInitiator.init({
       favoriteButtonContainer: document.getElementById(
@@ -34,6 +37,8 @@ const Detail = {
     AddReviewInitator.init({
       form: document.getElementById("form-review"),
       id: restaurant.id,
+      container: document.getElementById("alertMessageContainer"),
+      customerReviewsContainer: document.getElementById("restaurantReview"),
     });
   },
 };

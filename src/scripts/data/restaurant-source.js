@@ -4,13 +4,17 @@ class RestaurantSource {
   static async getRestaurantList() {
     const response = await fetch(API_ENDPOINT.RESTAURANT_LIST);
     const responseJson = await response.json();
-    return responseJson.restaurants;
+    if (response.ok) return responseJson.restaurants;
+
+    throw new Error(JSON.stringify(responseJson));
   }
 
   static async getRestaurantDetail(id) {
     const response = await fetch(API_ENDPOINT.RESTAURANT_DETAIL(id));
     const responseJson = await response.json();
-    return responseJson.restaurant;
+    if (response.ok) return responseJson.restaurant;
+
+    throw new Error(JSON.stringify(responseJson));
   }
 
   static async addRestaurantReview(data) {
@@ -22,7 +26,9 @@ class RestaurantSource {
       body: JSON.stringify(data),
     });
     const responseJson = await response.json();
-    return responseJson.customerReviews;
+    if (response.ok) return responseJson;
+
+    throw new Error(JSON.stringify(responseJson));
   }
 }
 
