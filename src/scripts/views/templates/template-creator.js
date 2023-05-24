@@ -1,5 +1,5 @@
 const createFavoriteButtonTemplate = () => `
-  <button id="favoriteButton" class="favorite">
+  <button aria-label="add to favorite" id="favoriteButton" class="favorite">
     <svg
       preserveAspectRatio="xMidYMid meet"
       viewBox="0 0 24 24"
@@ -18,7 +18,7 @@ const createFavoriteButtonTemplate = () => `
 `;
 
 const createFavoritedButtonTemplate = () => `
-  <button id="favoriteButton" class="favorite">
+  <button aria-label="remove favorite restaurant" id="favoriteButton" class="favorite">
     <svg
       preserveAspectRatio="xMidYMid meet"
       viewBox="0 0 24 24"

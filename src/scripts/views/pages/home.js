@@ -19,15 +19,10 @@ const Home = {
   },
 
   async afterRender() {
-    try {
-      const restaurants = await RestaurantSource.getRestaurantList();
-      const restaurantContainer = document.querySelector("restaurant-list");
+    const restaurants = await RestaurantSource.getRestaurantList();
+    const restaurantContainer = document.querySelector("restaurant-list");
 
-      restaurantContainer.restaurants = restaurants;
-    } catch (error) {
-      const container = document.querySelector(".container");
-      container.innerHTML = `<p>Not Found</p>`;
-    }
+    restaurantContainer.restaurants = restaurants;
   },
 };
 

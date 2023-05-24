@@ -4,7 +4,7 @@ import FavoriteRestaurantIdb from "../../data/favorite-restaurant-idb";
 const Favorite = {
   async render() {
     return `
-      <section class="restaurants">
+      <section class="restaurants" id="/content">
         <div class="container" id="favoriteRestaurant">
           <h2 class="title">Your Favorite Restaurant</h2>
           <div class="restaurants__grid" id="favoriteRestaurant">

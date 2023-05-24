@@ -80,7 +80,7 @@ class RestaurantDetail extends HTMLElement {
           </div>
         </div>
   
-        <div class="restaurant-detail__info">
+        <aside class="restaurant-detail__info">
           <h3>Informasi</h3>
           <div>
             <h4 class="restaurant-detail__info--title">Alamat</h4>
@@ -111,7 +111,7 @@ class RestaurantDetail extends HTMLElement {
                 .join("")}
             </ul>
           </div>
-        </div>
+        </aside>
       </div>
   
       <div class="restaurant-detail__review">

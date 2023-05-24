@@ -74,13 +74,15 @@
       }
 
       .restaurants__title {
-        margin-top: 16px;
+        margin-top: 8px;
 
         a {
           font-size: 20px;
           color: $black-10;
           font-weight: $semibold;
           text-decoration: none;
+          display: inline-flex;
+          align-items: center;
 
           &:hover {
             text-decoration: underline;
@@ -90,7 +92,7 @@
       }
 
       .restaurants__description {
-        margin-top: 8px;
+        margin-top: 4px;
         font-size: 16px;
         color: $gray;
         overflow: hidden;

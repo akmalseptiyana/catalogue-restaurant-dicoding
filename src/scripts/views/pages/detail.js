@@ -7,7 +7,7 @@ import FavoriteButtonInitiator from "../../utils/favorite-button-initiator";
 const Detail = {
   async render() {
     return `
-      <section id="restaurantDetail" class="restaurant-detail">
+      <section id="/content" class="restaurant-detail">
         <restaurant-detail></restaurant-detail>
       </section>
       <div id="favoriteButtonContainer"></div>

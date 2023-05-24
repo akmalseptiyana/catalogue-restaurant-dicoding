@@ -4,7 +4,7 @@ class HeroElement extends HTMLElement {
   }
 
   _render() {
-    this.innerHTML = `<section class="hero">
+    this.innerHTML = `<section class="hero" id="/content">
       <div class="container">
         <div class="hero__inner">
           <div class="wrapper">
