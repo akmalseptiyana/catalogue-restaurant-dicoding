@@ -15,7 +15,7 @@ class HeroElement extends HTMLElement {
           </div>
           <figure class="img-wrapper">
             <img
-              src="images/heros/hero-image_4.jpg"
+              src="images/heros/hero-image_4.webp"
               alt="cookies"
               class="img-cover"
             />
