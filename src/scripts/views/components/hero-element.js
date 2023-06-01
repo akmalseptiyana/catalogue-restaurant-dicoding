@@ -13,13 +13,19 @@ class HeroElement extends HTMLElement {
               Find the best restaurants with our recommendation
             </p>
           </div>
-          <figure class="img-wrapper">
-            <img
-              src="images/heros/hero-image_4.webp"
-              alt="cookies"
-              class="img-cover"
+          <picture class="img-wrapper">
+            <source
+              type="image/webp"
+              srcset="images/heros/hero-image_4-small.webp"
+              media="(max-width: 640px)"
+              class="lazyload img-cover"
             />
-          </figure>
+            <img
+              data-src="images/heros/hero-image_4-large.webp"
+              alt="cookies"
+              class="lazyload img-cover"
+            />
+          </picture>
         </div>
       </div>
     </section>`;

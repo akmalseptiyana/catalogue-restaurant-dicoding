@@ -19,12 +19,12 @@ class RestaurantItem extends HTMLElement {
   }
 
   _render() {
-    this.innerHTML = `<div class="card" tabindex="0">
+    this.innerHTML = `<div class="restaurants-item card" tabindex="0">
       <figure class="img-wrapper">
         <img
-          src="${CONFIG.BASE_IMAGE_URL}/small/${this._restaurant.pictureId}"
+          data-src="${CONFIG.BASE_IMAGE_URL}/small/${this._restaurant.pictureId}"
           alt="${this._restaurant.name}"
-          class="img-cover"
+          class="lazyload img-cover"
         />
       </figure>
       <div class="city">${this._restaurant.city}</div>
@@ -33,9 +33,14 @@ class RestaurantItem extends HTMLElement {
           Rating: <span>${this._restaurant.rating}</span>
         </div>
         <h3 class="restaurants__title">
-          <a href="/#/detail/${this._restaurant.id}">${this._restaurant.name}</a>
+          <a href="/#/detail/${this._restaurant.id}"
+            >${this._restaurant.name}</a
+          >
         </h3>
-        <p class="restaurants__description" title="${this._restaurant.description}">
+        <p
+          class="restaurants__description"
+          title="${this._restaurant.description}"
+        >
           ${this._restaurant.description}
         </p>
       </div>

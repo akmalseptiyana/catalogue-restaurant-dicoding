@@ -4,9 +4,9 @@
   margin-top: 32px;
 
   .img-wrapper {
-    height: auto;
+    height: 250px;
     @include breakpoints("lg") {
-      height: 350px;
+      height: 450px;
     }
 
     .img-cover {

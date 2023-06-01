@@ -43,7 +43,7 @@ class RestaurantDetail extends HTMLElement {
     <div class="container">
       <figure class="img-wrapper">
         <img
-          src="${CONFIG.BASE_IMAGE_URL}/large/${this._restaurant.pictureId}"
+          src="${CONFIG.BASE_IMAGE_URL}/medium/${this._restaurant.pictureId}"
           alt="${this._restaurant.name}"
           class="img-cover"
         />

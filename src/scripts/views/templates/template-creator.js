@@ -1,4 +1,4 @@
-const createFavoriteButtonTemplate = () => `
+const createFavoriteRestaurantButtonTemplate = () => `
   <button aria-label="add to favorite" id="favoriteButton" class="favorite">
     <svg
       preserveAspectRatio="xMidYMid meet"
@@ -17,7 +17,7 @@ const createFavoriteButtonTemplate = () => `
   </button>
 `;
 
-const createFavoritedButtonTemplate = () => `
+const createUnfavoriteRestaurantButtonTemplate = () => `
   <button aria-label="remove favorite restaurant" id="favoriteButton" class="favorite">
     <svg
       preserveAspectRatio="xMidYMid meet"
@@ -75,8 +75,8 @@ const createCustomerReviews = (customerReviews) => `
 `;
 
 export {
-  createFavoriteButtonTemplate,
-  createFavoritedButtonTemplate,
+  createFavoriteRestaurantButtonTemplate,
+  createUnfavoriteRestaurantButtonTemplate,
   createAlertMessage,
   createCustomerReviews,
 };

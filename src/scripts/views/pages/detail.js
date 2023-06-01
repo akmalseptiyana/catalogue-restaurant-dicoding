@@ -2,7 +2,8 @@ import "../components/restaurant-detail";
 import RestaurantSource from "../../data/restaurant-source";
 import UrlParser from "../../routes/url-parser";
 import AddReviewInitator from "../../utils/add-review-initiator";
-import FavoriteButtonInitiator from "../../utils/favorite-button-initiator";
+import FavoriteButtonPresenter from "../../utils/favorite-button-presenter";
+import FavoriteRestaurantIdb from "../../data/favorite-restaurant-idb";
 
 const Detail = {
   async render() {
@@ -21,10 +22,11 @@ const Detail = {
     const restaurantContainer = document.querySelector("restaurant-detail");
     restaurantContainer.restaurantDetail = restaurant;
 
-    FavoriteButtonInitiator.init({
+    FavoriteButtonPresenter.init({
       favoriteButtonContainer: document.getElementById(
         "favoriteButtonContainer"
       ),
+      favoriteRestaurants: FavoriteRestaurantIdb,
       restaurant: {
         id: restaurant.id,
         name: restaurant.name,
