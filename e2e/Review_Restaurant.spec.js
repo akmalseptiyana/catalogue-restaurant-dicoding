@@ -1,5 +1,3 @@
-const assert = require("assert");
-
 Feature("Review Restaurant");
 
 Before(({ I }) => {
@@ -7,7 +5,7 @@ Before(({ I }) => {
 });
 
 Scenario("Reviewing a Restaurant", async ({ I }) => {
-  I.click(locate(".restaurants__title a").first());
+  I.click(locate(".restaurants__title a").last());
   I.seeElement("#form-review");
 
   const name = "Gojo";
@@ -18,13 +16,6 @@ Scenario("Reviewing a Restaurant", async ({ I }) => {
   I.fillField("#input-review", review);
   I.click(`button[type="submit"]`);
 
-  const submittedName = await I.grabTextFrom(
-    locate(".restaurant-detail__review--item h4").last()
-  );
-  const submittedReview = await I.grabTextFrom(
-    locate(".restaurant-detail__review--item p").last()
-  );
-
-  assert.strictEqual(name, submittedName);
-  assert.strictEqual(review, submittedReview);
+  I.see(name, ".restaurant-detail__review--item h4");
+  I.see(review, ".restaurant-detail__review--item p");
 });

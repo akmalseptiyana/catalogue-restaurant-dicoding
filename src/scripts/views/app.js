@@ -27,6 +27,7 @@ class App {
     if (url !== "/content") {
       const page = routes[url];
       this._content.innerHTML = await page.render();
+      window.scrollTo(0, 0);
       await page.afterRender();
     }
   }

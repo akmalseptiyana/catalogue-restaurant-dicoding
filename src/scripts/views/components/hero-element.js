@@ -20,8 +20,14 @@ class HeroElement extends HTMLElement {
               media="(max-width: 640px)"
               class="lazyload img-cover"
             />
+            <source
+              type="image/webp"
+              srcset="images/heros/hero-image_4-large.webp"
+              media="(min-width: 641px)"
+              class="lazyload img-cover"
+            />
             <img
-              data-src="images/heros/hero-image_4-large.webp"
+              src="images/heros/hero-image_4.jpg"
               alt="cookies"
               class="lazyload img-cover"
             />
